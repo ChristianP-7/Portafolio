@@ -1,93 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico">
-    <title>Christian Pérez</title>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/b8ed6fd59f.js" crossorigin="anonymous"></script>
 
-</head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="favicon.png"/>
+        <title>Portafolio</title>
 
-<style>
-   
-</style>
+        <script>
+            // Función para cerrar el menú cuando se hace clic en un enlace.
+            function closeMenu() {
+              const checkbox = document.getElementById('check');
+              checkbox.checked = false;
+            }
+          
+            // Función para el desplazamiento suave. Se agrega el parámetro "event" por convención y para garantizar que el código sea capaz de manejar cualquier evento. 
+            function smoothScroll(event, target) {
+                event.preventDefault();
+                const targetElement = document.querySelector(target);
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+          </script>
+    </head>
 
-<body>
-    <header>
-        <h3 id="nombre">Christian André Pérez</h3>
-    </header>
-    <section id="sect1" class="sect">
-        <video src="Recursos/Plexus_Space.mp4" autoplay="true" muted="true" loop="true"></video>
-        <div class="caja-central">
-            <div class="caja-cara">
-                <img class="cara" src="Recursos/Foto.png" alt="Christian Pérez">            
+    <body>
+        <header>
+            <h2 class="logo">&lt<span class="colored-text">CP</span>/&gt</h2>
+            <input type="checkbox" id="check">
+            <label for="check" class="mostrar-menu">
+                &#8801
+            </label>
+            <nav class="menu">
+                <input type="checkbox" id="check">
+                <a href="#about" onclick="closeMenu(); smoothScroll(event, '#about')">About</a>
+                <a href="#skills" onclick="closeMenu(); smoothScroll(event, '#skills')">Skills</a>
+                <a href="#portfolio" onclick="closeMenu(); smoothScroll(event, '#portfolio')">Portfolio</a>
+                <a href="#intereses" onclick="closeMenu(); smoothScroll(event, '#intereses')">Interests</a>
+                <a href="#contact" onclick="closeMenu(); smoothScroll(event, '#contact')">Contact</a>
+                <label for="check" class="esconder-menu">
+                    &#215
+                </label>
+            </nav>
+        </header>
+
+        <section id="banner">
+            <div class="contenido-banner">
+                <h3><span>Christian Pérez:  </span>Back-end developer <br><br></h3>
+                <a href="https://github.com/ChristianP-7" target="_blank" class="boton-cv">GitHub Profile</a>
             </div>
-            <div class="caja-presentacion">
-                <div>    
-                    <h1>Hello there!</h1>
-                    <p class="presentacion">
-                        Mi nombre es Christian y soy estudiante de desarrollo web. Estoy siguiendo el camino de backend y aprendiendo siempre sobre nuevas tecnologías.
-                    </p>
+        </section>
+        
+    <section id="primera-parte">
+        <div id="about">
+            <h3>About me</h3>
+            <div>
+                <img src="" alt="">
+                <h4>Who am i?</h4>
+                <p>I'm Christian Pérez, Back-end Developer, with excelent comunication skills and I love collaborating and working as a team.                </p>
+                <p><span style="font-size: 90%;">I'm looking for a full time position in web development, where I can apply my knowledge and skills to continue improving.</strong></span></p>
+            </div>
+        </div>
+
+        <div id="skills">
+            <h4>My Skills</h4>
+            <div class="contenido-skills">
+                <div>
+                    <i class="fa-brands fa-html5 fa-3x"></i>
+                    <h6>HTML5</h6>
+                </div>
+                <div>
+                    <i class="fa-brands fa-css3-alt fa-3x"></i>
+                    <h6>CSS3</h6>
+                </div>
+                <div>
+                    <i class="fa-brands fa-js fa-3x"></i>
+                    <h6>Javascript</h6>
+                </div>
+                <div>
+                    <i class="fa-brands fa-java fa-3x"></i>
+                    <h6>Java</h6>
+                </div>
+                <div id="skill-extra">
+                    <i class="fa-solid fa-database fa-3x"></i>
+                    <h6>SQL</h6>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="dos">
-        <h2>Sobre mí</h2>
-        <p>
-            Soy estudiante de programación enfocado en backend. Actualmente estudio en el programa de Oracle Next Education y tengo conocimientos adicionales en Git y Github. Mi dominio del inglés es intermedio, soy autodidacta y muy curioso a la hora de aprender.
-        </p>
-        <h2>Aptitudes</h2>
-        <p>
-            Estás son algunas de las tecnologías que manejo.
-        </p>
-        <div class="aptitudes">
-            <div class="tech-list">
-                <img src="Recursos/js.png" class="tech" alt="">
-                <img src="Recursos/html-5.png" class="tech" alt="">
-                <img src="Recursos/css-3.png" class="tech" alt="">
-            </div>
-        </div>
-        <h2>Cursos realizados</h2>
-        <ul>
-            <li>Lógica de programación</li>
-            <li>HTML5 y CSS3</li>
-            <li>Git y Github</li>
-            <li>Curso de Desarrollo Personal (Habilidades blandas)</li>
-        </ul>
-    </section>
-    <section class="tres">
-        <h2>Mis Proyectos</h2>
-        <div class="proyectos">
-            <div class="card">
-                <h3>Encriptador de texto</h3>
-                <img src="Recursos/Captura de pantalla 2023-07-01 192545.png" alt="Encriptador">
-                <p>
-                    Proyecto en el que usando Javascript, HTML y CSS se construyó un encriptador de dos vías.
-                </p>
-                <a href="https://christianp-7.github.io/Encriptador-de-texto/" target="_blank">Ver</a>
+            <div class="boton-skills">
+                <a href="https://app.aluracursos.com/user/christianperezt7" target="_blank" class="boton-ver-perfil">View Profile</a>
             </div>
         </div>
     </section>
-    <footer>
-        <h2>Contáctame</h2>
-            <div class="contacto">
-                <a href="https://www.linkedin.com/in/christian-p%C3%A9rez-t%C3%A1vara-994369255/" target="_blank">
-                    <img src="Recursos/linkedin.png" class="red-social" alt="">
-                </a>
-                <hr>
-                <a href="https://github.com/ChristianP-7" target="_blank">
-                    <img src="Recursos/github-sign.png" class="red-social" alt="">
-                </a>
-            </div>
-    </footer>
-</body>
-</html>
 
+        <section id="portfolio">         
+            <h3>Portfolio</h3>
+            <div class="proyectos">
+                <div>
+                    <img src="Encriptador.png" alt="Imagen-Encriptador">
+                    <h4>Text Encryptor</h4>
+                    <p>Plaintext encryptor developed as the first challenge in the <strong>ONE</strong> program.</p>
+                    <p><span style="font-size: 90%;">Structured with HTML, styled with <strong>CSS</strong> and programmed in <strong>Javascript</strong></span></p> 
+                    <a href="https://christianp-7.github.io/Encriptador-de-texto/" target="_blank" class="boton-ver-mas">View More</a>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <h4>Currency Converter</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, distinctio!</p>
+                    <a href="#" class="boton-ver-mas">View More</a>
+                </div>
+            </div>
+        </section>
 
+        <section id="intereses">
+            <h4>Interests</h4>
+            <div class="contenido-intereses">
+                <div>
+                    <i class="fa-solid fa-gamepad fa-3x"></i>
+                    <h6>Videogames Development</h6>
+                </div>
+                <div>
+                    <i class="fa-solid fa-sitemap fa-3x"></i>
+                    <h6>Artificial Intelligence</h6>
+                </div>
+                <div id="icono-extra">
+                    <i class="fa-solid fa-shield-halved fa-3x"></i>
+                    <h6>Cybersecurity</h6>
+                </div>
+                <div id="icono-extra">
+                <i class="fa-regular fa-window-restore fa-3x"></i>
+                <h6>Web Development</h6>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h4>Contact</h4>
+            <div class="contenido-social">
+                <div>
+                    <i class="fa-brands fa-square-github fa-3x"></i>
+                    <a href="https://github.com/ChristianP-7" target="_blank" class="boton-social">GitHub</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-linkedin fa-3x"></i>
+                    <a href="https://www.linkedin.com/in/christian-p%C3%A9rez-t%C3%A1vara-994369255/" target="_blank" class="boton-social">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy;2023 Christian Pérez</p>
+        </footer>
+    </body>
+    </html>
